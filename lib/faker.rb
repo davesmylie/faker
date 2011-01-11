@@ -19,7 +19,7 @@ module Faker
       end
   
       def letterify(letter_string)
-        letter_string.gsub(/\?/) { ('a'..'z').to_a.rand }
+        letter_string.gsub(/\?/) { ('a'..'z').to_a.sample }
       end
   
       def bothify(string)
@@ -29,7 +29,7 @@ module Faker
       # Helper for the common approach of grabbing a translation with an array
       # of values and selecting one of them
       def fetch(key)
-        I18n.translate("faker.#{key}").rand
+        I18n.translate("faker.#{key}").sample
       end
     end
   end
