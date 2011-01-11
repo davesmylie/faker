@@ -7,14 +7,14 @@ module Faker
           '%s %s' % [city_prefix, Name.first_name],
           '%s%s' % [Name.first_name, city_suffix],
           '%s%s' % [Name.last_name, city_suffix],
-        ].rand
+        ].sample
       end
 
       def street_name
         [
           Proc.new { [Name.last_name, street_suffix].join(' ') },
           Proc.new { [Name.first_name, street_suffix].join(' ') }
-        ].rand.call
+        ].sample.call
       end
 
       def street_address(include_secondary = false)
