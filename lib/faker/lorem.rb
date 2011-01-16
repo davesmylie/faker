@@ -6,7 +6,7 @@ module Faker
     end
 
     def self.sentence(word_count = 4)
-      words(word_count + rand(6)).join(' ').capitalize + '.'
+      words(word_count + sample(6)).join(' ').capitalize + '.'
     end
 
     def self.sentences(sentence_count = 3)
@@ -18,7 +18,7 @@ module Faker
     end
 
     def self.paragraph(sentence_count = 3)
-      sentences(sentence_count + rand(3)).join(' ')
+      sentences(sentence_count + sample(3)).join(' ')
     end
 
     def self.paragraphs(paragraph_count = 3)

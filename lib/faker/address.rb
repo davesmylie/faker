@@ -44,7 +44,7 @@ module Faker
       def method_missing(m, *args, &block)
         # Use the alternate form of translate to get a nil rather than a "missing translation" string
         if translation = I18n.translate(:faker)[:address][m]
-          translation.respond_to?(:rand) ? translation.rand : translation
+          translation.respond_to?(:sample) ? translation.sample : translation
         else
           super
         end
